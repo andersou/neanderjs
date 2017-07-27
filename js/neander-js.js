@@ -195,7 +195,7 @@
             return s;
         }
 
-        function step() {
+        function stepResult() {
             // The instruction under PC.
             cont = true;
             opc = Math.floor(mem[pc()] / 16);
@@ -219,7 +219,7 @@
         }
 
         function run() {
-            while (step());
+            while (stepResult());
         }
 
         function op_NOP(arg) {
