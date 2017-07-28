@@ -17,6 +17,10 @@ Just run index.html
 * [JQuery](http://jquery.com/) - The best JS library
 * [Brackets](http://brackets.io/) - Used to code
 
+## License
+
+This project is licensed under the GNU General Public License v3.0 License - see the [LICENSE](LICENSE) file for details
+
 ## Authors
 
 * **Vitor Araujo** - *Initial work* - [Website](http://inf.ufrgs.br/~vbuaraujo/)
