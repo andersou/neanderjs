@@ -1,0 +1,37 @@
+#principal .input-group {
+	width: 100%;
+}  
+#principal .input-group > .input-group-addon{
+	width: 50%;
+}
+.table td:nth-child(1){
+	text-align: right;
+}
+.table td:nth-child(2){
+	text-align: left;
+}
+
+body{
+	background-color: rgba(0,0,0,0.8);
+}
+
+.btn-info {
+    background-color: #ff3d87;
+    border-color:  #ff3d87;
+}
+
+.btn-info:hover {
+    color: #fff;
+    background-color: #d02466 !important;
+    border-color:  #d02466 !important;
+}
+.btn-info:focus, .btn-info .active{
+    color: #fff;
+    background-color: #d02466 !important;
+    border-color:  #d02466 !important;
+}
+
+select {
+    background-color: rgb(88, 88, 88) !important;
+    color: white !important;
+}
