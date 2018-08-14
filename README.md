@@ -1,21 +1,21 @@
-# NeanderJS
+# NeanderJS PWA
 
 A Neander simulator in javascript, forked from Vitor de Araujo.
+> NEW FEATURE!!! NOW it's run offline!
 
 ## Getting Started
 
-Just run index.html
+ Just click [here](https://andersou.github.io/neanderjs/).
 
 ### Prerequisites
 
-* Internet connection (CDN -> Bootstrap, JQuery)
 * A browser that support HTML5, CSS3 and JS.
 
 ## Built With
 
-* [Bootstrap](http://www.getbootstrap.com/) - The frontend framework used
-* [JQuery](http://jquery.com/) - The best JS library
-* [Brackets](http://brackets.io/) - Used to code
+* [Bootstrap](http://www.getbootstrap.com/) - The frontend framework for the responsive design 
+* [JQuery](http://jquery.com/) - JS library
+* [VS Code](https://code.visualstudio.com/) - Used to code
 
 ## License
 
@@ -28,5 +28,5 @@ This project is licensed under the GNU General Public License v3.0 License - see
 
 ## Try it
 
-[NeanderJS](http://barbaruiva.xyz/neanderjs)
+[NeanderJS](https://andersou.github.io/neanderjs/)
 
