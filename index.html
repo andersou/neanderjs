@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="./css/neander.css">
     <!-- Metas do icone -->
     <link rel="manifest" href="./manifest.json">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="120x120" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
     <meta name="apple-mobile-web-app-title" content="NeanderJS">
     <meta name="application-name" content="NeanderJS">
     <meta name="msapplication-TileColor" content="#2d89ef">
@@ -209,10 +209,10 @@
 
                                         <div class="row">
                                             <div class="col-sm-6">
-                                                <input type="button" class="btn btn-info btn-block" id="do_import" name="do_import" value="&lt;" onclick="impexp_do(1, this.form)">
+                                                <input type="button" class="btn btn-info btn-block" id="do_import" name="do_import" value="Importar" onclick="impexp_do(1, this.form)">
                                             </div>
                                             <div class="col-sm-6">
-                                                <input type="button" class="btn btn-info btn-block" id="do_export" name="do_export" value="&gt;" onclick="impexp_do(2, this.form)">
+                                                <input type="button" class="btn btn-info btn-block" id="do_export" name="do_export" value="Gerar" onclick="impexp_do(2, this.form)">
                                             </div>
                                         </div>
                                         <div class="input-group">
@@ -229,7 +229,7 @@
 
                                         <input type="hidden" name="formatname" value="hexmem">
 
-                                        <textarea style="width: 100%" name="code" rows="15"></textarea>
+                                        <textarea id="txt_mem" style="width: 100%" name="code" rows="15"></textarea>
 
                                         </p>
                                         <div id="impexp_optspane">
