@@ -62,3 +62,10 @@ select {
 #txt_mem{
     color: #222
 }
+
+.syntax{
+    background-color: rgba(200,200,200,0.6);
+    padding: 4px;
+    border-radius: 8px;
+    color: rgb(255, 241, 102);
+}

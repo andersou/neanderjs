@@ -38,13 +38,13 @@
                             </select>
                             <div class="input-group">
                                 <div class="input-group-addon">Endereço</div>
-                                <input type="text" name="addr" class="form-control addr" value="[?]">
+                                <input type="text" name="addr" class="form-control addr" value="[?]" autocomplete="off" autocorrect="off">
                             </div>
                             <div class="input-group">
                                 <div class="input-group-addon">
                                     Valor
                                 </div>
-                                <input type="text" name="val" class="form-control val">
+                                <input type="text" name="val" class="form-control val" autocomplete="off" autocorrect="off">
                                 <input type="submit" class="btn btn-info btn-block form-control" value="Setar">
                             </div>
                         </form>
@@ -57,14 +57,14 @@
 
                             <div class="input-group">
                                 <div class="input-group-addon">Endereço</div>
-                                <input type="text" name="addr" class="form-control addr" value="[?]">
+                                <input type="text" name="addr" class="form-control addr" value="[?]" autocomplete="off" autocorrect="off">
                             </div>
 
                             <div class="input-group">
                                 <div class="input-group-addon">
                                     Valor
                                 </div>
-                                <input type="text" name="val" class="form-control val">
+                                <input type="text" name="val" class="form-control val" autocomplete="off" autocorrect="off">
                                 <input type="submit" class="btn btn-info btn-block form-control" value="Setar">
 
                             </div>
@@ -92,6 +92,10 @@
                 </ul>
                 <div class="tab-content">
                     <div id="principal" role="tabpanel" class="tab-pane active">
+                        <div class="btn-group" style="float: right;margin-bottom: 5px;margin-top: 5px;">
+                            <input type="button" class="btn btn-warning"  value="Reset" onclick="reset_neander()">
+                            <input  type="button" class="btn btn-danger"  value="Hard Reset" onclick="reset_neander(true)">
+                        </div>
                         <form name="panel">
                             <div class="input-group">
                                 <div class="input-group-addon">Acumulador</div>
@@ -132,6 +136,7 @@
 
 
 
+
                         </form>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="mneumonicos">
@@ -148,27 +153,27 @@
                                 </tr>
                                 <tr>
                                     <td>16</td>
-                                    <td>STA end
+                                    <td>STA <span class="syntax">&lt;end&gt;</span> 
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>32</td>
-                                    <td>LDA end
+                                    <td>LDA <span class="syntax">&lt;end&gt;</span> 
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>48</td>
-                                    <td>ADD end
+                                    <td>ADD <span class="syntax">&lt;end&gt;</span> 
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>64</td>
-                                    <td>OR end
+                                    <td>OR <span class="syntax">&lt;end&gt;</span> 
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>80</td>
-                                    <td>AND end
+                                    <td>AND <span class="syntax">&lt;end&gt;</span> 
                                     </td>
                                 </tr>
                                 <tr>
@@ -178,17 +183,17 @@
                                 </tr>
                                 <tr>
                                     <td>128</td>
-                                    <td>JMP end
+                                    <td>JMP <span class="syntax">&lt;end&gt;</span> 
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>144</td>
-                                    <td>JN end
+                                    <td>JN <span class="syntax">&lt;end&gt;</span> 
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>160</td>
-                                    <td>JZ end
+                                    <td>JZ <span class="syntax">&lt;end&gt;</span> 
                                     </td>
                                 </tr>
                                 <tr>
@@ -260,12 +265,12 @@
                     </div>
                     <div role="tabpanel" class="tab-pane" id="sobre">
                         <div class="container-fluid">
-                            <h2>Neander-js </h2>
-                            <h4 id="title">version 0.0.3, 2009-04-27</h4>
+                            <h2>NeanderJS PWA </h2>
+                            <h4 id="title">version </h4>
                             <h4>Developed By:
                                 <a href="http://inf.ufrgs.br/~vbuaraujo/sw/neander/">Vítor Bujés Ubatuba De Araújo </a>
                             </h4>
-                            <h4>Bootstraped by:
+                            <h4>PWA/Responsive Design by:
                                 <a href="http://barbaruiva.xyz/">Anderson Souza </a>
                             </h4>
 
