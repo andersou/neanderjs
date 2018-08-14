@@ -3,7 +3,7 @@ let cachePrincipal = "neander-v"+version
 let cacheWhitelist = [cachePrincipal]
 
 let arquivosCache = [
-    '/',
+    './',
     'css/bootstrap.min.css',
     'css/neander.css',
     'js/bootstrap.min.js',
