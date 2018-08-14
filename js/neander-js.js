@@ -2,7 +2,7 @@
         // Written by Vítor De Araújo, http://inf.ufrgs.br/~vbuaraujo .
         // No copyright -- this program is in public domain.
 
-        version = "0.0.5, 2017-11-01";
+        version = "0.0.6, 2018";
 
         op = new Array();
         op[0] = "NOP";
