@@ -20,14 +20,11 @@
 </head>
 
 <body>
-
     <div class="jumbotron">
         <div class="container">
             <h1>NeanderJS</h1>
         </div>
-
     </div>
-
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -44,7 +41,8 @@
                                 <div class="input-group-addon">
                                     Valor
                                 </div>
-                                <input type="text" name="val" class="form-control val" autocomplete="off" autocorrect="off">
+                                <input type="text" name="val" class="form-control val" autocomplete="off" autocorrect="off"
+                                 data-toggle="tooltip" data-trigger="manual" title="Você também pode utilizar a representação literal do Mnemônico, 'STA' invés de '16'">
                                 <input type="submit" class="btn btn-info btn-block form-control" value="Setar">
                             </div>
                         </form>
@@ -76,18 +74,18 @@
 
             </div>
             <div class="col-md-6 ">
-                <ul class="nav nav-tabs">
+                <ul class="nav nav-pills">
                     <li role="presentation" class="active">
-                        <a href="#principal" data-toggle="tab">Home</a>
+                        <a href="#principal" data-toggle="pill">Home</a>
                     </li>
                     <li role="presentation">
-                        <a href="#impexp" data-toggle="tab">Projetos</a>
+                        <a href="#impexp" data-toggle="pill">Projetos</a>
                     </li>
                     <li role="presentation">
-                        <a href="#mneumonicos" data-toggle="tab">Mneumônicos</a>
+                        <a href="#mneumonicos" data-toggle="pill">Mneumônicos</a>
                     </li>
                     <li role="presentation">
-                        <a href="#sobre" data-toggle="tab">Sobre</a>
+                        <a href="#sobre" data-toggle="pill">Sobre</a>
                     </li>
                 </ul>
                 <div class="tab-content">
@@ -101,8 +99,6 @@
                                 <div class="input-group-addon">Acumulador</div>
                                 <input type="text" name="ac" onchange="setac(this.value)" class="reg form-control">
                             </div>
-
-
                             <div class="input-group">
                                 <div class="input-group-addon">Acumulador Sig</div>
                                 <input type="text" name="acsigned" onchange="setac(this.value)" class="reg form-control">
@@ -111,32 +107,18 @@
                                 <div class="input-group-addon">Acumulador Bin</div>
                                 <input type="text" name="acbinary" class="reg form-control">
                             </div>
-
                             <div class="input-group">
                                 <div class="input-group-addon">Program Counter</div>
                                 <input type="text" name="pc" onchange="setpc(this.value)" class="reg form-control">
                                 <input type="text" name="pcbinary" class="reg form-control">
                             </div>
-
                             <div class="input-group">
                                 <div class="input-group-addon">Flag's Acumulador</div>
-
                                 <input type="button" name="nflag" id="nflag" value=" N " class="form-control" style="background: rgb(192, 192, 192);">
                                 <input type="button" name="zflag" id="zflag" value=" Z " class="form-control" style="background: rgb(0, 255, 0);">
                             </div>
-
-
                             <input style="margin-top: 5px;" type="button" class="btn btn-success btn-block " name="brun" value="Run" onclick="run()">
-
-
-
-
                             <input type="button" class="btn btn-info btn-block" name="bstep" value="Step" onclick="stepResult()">
-
-
-
-
-
                         </form>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="mneumonicos">
@@ -213,34 +195,34 @@
                         </table>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="impexp">
-                        
-                            <div class="row">
-                                <div class="col-sm-12">
+
+                        <div class="row">
+                            <div class="col-sm-12">
 
 
-                                    <div class="container-fluid" style="margin-top: 20px;">
+                                <div class="container-fluid" style="margin-top: 20px;">
 
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="panel panel-default">
-                                                    <div class="panel-body">
-                                                        <form action="" onsubmit="salvarProjeto(event)">
-                            
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon" id="basic-addon1">Nome do projeto</span>
-                                                                <input id="nome-projeto" type="text" class="form-control"  placeholder="Ex.: Somador" aria-describedby="basic-addon1">
-                                                            </div>
-                                                            <div>
-                                                                <a id="salvar-projeto" href="" style="float:right;margin-top:5px;" class="btn btn-primary">Salvar</a>
-                                                            </div>
-                                                        </form>
-                                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <form action="" onsubmit="salvarProjeto(event)">
+
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon" id="basic-addon1">Nome do projeto</span>
+                                                            <input id="nome-projeto" type="text" class="form-control" placeholder="Ex.: Somador" aria-describedby="basic-addon1">
+                                                        </div>
+                                                        <div>
+                                                            <a id="salvar-projeto" href="" style="float:right;margin-top:5px;" class="btn btn-primary">Salvar</a>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-12">
-                                                <h3>Projetos</h3>
-                                                <ul id="lista-projetos" class="list-group">
-                                                    <!-- <li class="list-group-item">
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <h3>Projetos</h3>
+                                            <ul id="lista-projetos" class="list-group">
+                                                <!-- <li class="list-group-item">
                                                         <div>
                                                                 <span class="id">14</span>
                                                                 <span class="nome">
@@ -256,14 +238,14 @@
                                                         
                                                     </li> -->
 
-                                                </ul>
-                                            </div>
+                                            </ul>
                                         </div>
                                     </div>
-
                                 </div>
+
                             </div>
-                        
+                        </div>
+
                     </div>
                     <div role="tabpanel" class="tab-pane" id="sobre">
                         <div class="container-fluid">
@@ -292,23 +274,31 @@
             navigator.serviceWorker.register('service-worker.js')
                 .then(function (reg) {
                     console.log('Service worker registrado com sucesso');
-                    console.log(reg)
+                    
                 }).catch(function (error) {
                     console.log('Erro ao registrar sw ' + error);
                 });
         }
     </script>
 
-    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="./js/neander-js.js"></script>
+    <script src="./js/neander-js.js"></script>
     <script src="./js/database.js"></script>
     <script type="text/javascript">
         $(function () {
             init();
             $('#salvar-projeto').on('click', salvarProjeto)
-            
             carregarProjetos();
+
+            //mostrar dica
+            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="tooltip"]').one('focus',function(){
+                $('[data-toggle="tooltip"]').tooltip('show');
+                setTimeout(function(){
+                    $('[data-toggle="tooltip"]').tooltip('destroy'); 
+                },5000)
+            })
         });
     </script>
 
