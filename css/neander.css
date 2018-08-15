@@ -84,7 +84,13 @@ select {
     float:right;
 }
 .list-group-item .id{
-
+    font-style: italic;
+    background-color: #111;
+    border-radius: 0.7ch;
+    padding: 0.7ch;
+}
+.list-group-item .nome{
+    padding-left: 0.5ch
 }
 .list-group-item > div{
     /* overflow-x: hidden; */
