@@ -1,4 +1,4 @@
-let version = 17;
+let version = 18;
 let cachePrincipal = "neander-v"+version
 let cacheWhitelist = [cachePrincipal]
 
@@ -37,7 +37,7 @@ this.addEventListener('activate', function (event) {
 });
 
 this.addEventListener('fetch', function (event) {
-    console.log(event.request)
+    // console.log(event.request)
     event.respondWith(caches.match(event.request)
         .then((resp) => {
             return resp || fetch(event.request);
