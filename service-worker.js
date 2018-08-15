@@ -1,4 +1,4 @@
-let version = 21;
+let version = 22;
 let cachePrincipal = "neander-v"+version
 let cacheWhitelist = [cachePrincipal]
 
@@ -10,7 +10,9 @@ let arquivosCache = [
     'js/jquery-3.2.1.min.js',
     'js/neander-js.js',
     'js/database.js',
-    'manifest.json'
+    'manifest.json',
+    'favicon-32x32.png',
+    'favicon-16x16.png'
 ];
 this.addEventListener('install', function (event) {
     event.waitUntil(
