@@ -86,7 +86,13 @@ select {
 .list-group-item .id{
 
 }
-
-.list-group-item .nome{
+.list-group-item > div{
+    /* overflow-x: hidden; */
+    word-break: break-word;
+    word-wrap: break-word;
+}
+.list-group-item .btn-group{
+    display: flex;
+    flex-wrap: nowrap;
 
 }
