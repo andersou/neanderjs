@@ -81,10 +81,10 @@
                         <a href="#principal" data-toggle="tab">Home</a>
                     </li>
                     <li role="presentation">
-                        <a href="#mneumonicos" data-toggle="tab">Mneumônicos</a>
+                        <a href="#impexp" data-toggle="tab">Projetos</a>
                     </li>
                     <li role="presentation">
-                        <a href="#impexp" data-toggle="tab">Importar/Exportar</a>
+                        <a href="#mneumonicos" data-toggle="tab">Mneumônicos</a>
                     </li>
                     <li role="presentation">
                         <a href="#sobre" data-toggle="tab">Sobre</a>
@@ -93,8 +93,8 @@
                 <div class="tab-content">
                     <div id="principal" role="tabpanel" class="tab-pane active">
                         <div class="btn-group" style="float: right;margin-bottom: 5px;margin-top: 5px;">
-                            <input type="button" class="btn btn-warning"  value="Reset" onclick="reset_neander()">
-                            <input  type="button" class="btn btn-danger"  value="Hard Reset" onclick="reset_neander(true)">
+                            <input type="button" class="btn btn-warning" value="Reset" onclick="reset_neander()">
+                            <input type="button" class="btn btn-danger" value="Hard Reset" onclick="reset_neander(true)">
                         </div>
                         <form name="panel">
                             <div class="input-group">
@@ -153,27 +153,32 @@
                                 </tr>
                                 <tr>
                                     <td>16</td>
-                                    <td>STA <span class="syntax">&lt;end&gt;</span> 
+                                    <td>STA
+                                        <span class="syntax">&lt;end&gt;</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>32</td>
-                                    <td>LDA <span class="syntax">&lt;end&gt;</span> 
+                                    <td>LDA
+                                        <span class="syntax">&lt;end&gt;</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>48</td>
-                                    <td>ADD <span class="syntax">&lt;end&gt;</span> 
+                                    <td>ADD
+                                        <span class="syntax">&lt;end&gt;</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>64</td>
-                                    <td>OR <span class="syntax">&lt;end&gt;</span> 
+                                    <td>OR
+                                        <span class="syntax">&lt;end&gt;</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>80</td>
-                                    <td>AND <span class="syntax">&lt;end&gt;</span> 
+                                    <td>AND
+                                        <span class="syntax">&lt;end&gt;</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -183,17 +188,20 @@
                                 </tr>
                                 <tr>
                                     <td>128</td>
-                                    <td>JMP <span class="syntax">&lt;end&gt;</span> 
+                                    <td>JMP
+                                        <span class="syntax">&lt;end&gt;</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>144</td>
-                                    <td>JN <span class="syntax">&lt;end&gt;</span> 
+                                    <td>JN
+                                        <span class="syntax">&lt;end&gt;</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>160</td>
-                                    <td>JZ <span class="syntax">&lt;end&gt;</span> 
+                                    <td>JZ
+                                        <span class="syntax">&lt;end&gt;</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -205,7 +213,7 @@
                         </table>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="impexp">
-                        <form name="impexp">
+                        
                             <div class="row">
                                 <div class="col-sm-12">
 
@@ -213,55 +221,49 @@
                                     <div class="container-fluid" style="margin-top: 20px;">
 
                                         <div class="row">
-                                            <div class="col-sm-6">
-                                                <input type="button" class="btn btn-info btn-block" id="do_import" name="do_import" value="Importar" onclick="impexp_do(1, this.form)">
+                                            <div class="col-sm-12">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-body">
+                                                        <form action="" onsubmit="salvarProjeto(event)">
+                            
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon" id="basic-addon1">Nome do projeto</span>
+                                                                <input id="nome-projeto" type="text" class="form-control"  placeholder="Ex.: Somador" aria-describedby="basic-addon1">
+                                                            </div>
+                                                            <div>
+                                                                <a id="salvar-projeto" href="" style="float:right;margin-top:5px;" class="btn btn-primary">Salvar</a>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="col-sm-6">
-                                                <input type="button" class="btn btn-info btn-block" id="do_export" name="do_export" value="Gerar" onclick="impexp_do(2, this.form)">
+                                            <div class="col-sm-12">
+                                                <h3>Projetos</h3>
+                                                <ul id="lista-projetos" class="list-group">
+                                                    <!-- <li class="list-group-item">
+                                                        <div>
+                                                                <span class="id">14</span>
+                                                                <span class="nome">
+                                                                    projeto x
+                                                                </span>
+                                                        </div>
+                                                        
+                                                        <div class="btn-group" role="group" aria-label="...">
+                                                            <button type="button" class="btn btn-primary">Abrir</button>
+                                                            <button type="button" class="btn btn-danger">Excluir</button>
+                                                        </div>
+                                                        
+                                                        
+                                                    </li> -->
+
+                                                </ul>
                                             </div>
                                         </div>
-                                        <div class="input-group">
-                                            <div class="input-group-addon">Format:</div>
-                                            <div class="form-control">
-
-                                                <label>
-                                                    <input type="radio" name="format" value="hexmem" checked="on" onclick="this.form.formatname.value=this.value">hexmem
-                                                </label>
-                                            </div>
-                                            <p>
-                                        </div>
-
-
-                                        <input type="hidden" name="formatname" value="hexmem">
-
-                                        <textarea id="txt_mem" style="width: 100%" name="code" rows="15"></textarea>
-
-                                        </p>
-                                        <div id="impexp_optspane">
-                                            <b>Dica:</b> No GNU/Linux, você pode converter o formato hexmem para o formato MEM
-                                            do Neander usando o comando
-                                            <tt>xxd</tt>, que acompanha o editor de texto Vim.
-                                            <br> – Para converter de
-                                            <u>hexmem</u> para
-                                            <u>mem</u>: salve o código acima em um arquivo texto e use:
-                                            <br>
-                                            <tt>xxd -r -p arquivo.hex &gt;arquivo.mem</tt>
-                                            <br> – Para converter de
-                                            <u>mem</u> para
-                                            <u>hexmem</u>:
-                                            <br>
-                                            <tt>xxd -p arquivo.mem &gt;arquivo.hex</tt>
-                                        </div>
-
-
-
-
-
                                     </div>
 
                                 </div>
                             </div>
-                        </form>
+                        
                     </div>
                     <div role="tabpanel" class="tab-pane" id="sobre">
                         <div class="container-fluid">
@@ -300,11 +302,16 @@
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/neander-js.js"></script>
+    <script src="./js/database.js"></script>
     <script type="text/javascript">
         $(function () {
             init();
+            $('#salvar-projeto').on('click', salvarProjeto)
+            
+            carregarProjetos();
         });
     </script>
+
 </body>
 
 </html>

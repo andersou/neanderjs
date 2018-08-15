@@ -22,10 +22,18 @@ select {
     background-color: rgb(88, 88, 88) !important;
     color: white !important;
 }
-
+.input-group-addon, .form-control{
+	background-color: #fff166;
+    /* border:1px solid #222; */
+    color: #222;
+}
 .form-control{
-	background-color: rgb(88, 88, 88) !important;
+	background-color: rgb(88, 88, 88);
     color: white !important;
+}
+.input-group-addon, .input-group-btn, .input-group .form-control {
+    display: table-cell;
+    height: 100%;
 }
 
 .btn-info {
@@ -48,10 +56,7 @@ select {
 	color: white;
 }
 
-.input-group-addon, .form-control{
-	background-color: #fff166;
-	border-color: #696969;
-}
+
 .form-control:focus {
     border-color: #e966c5;
     outline: 0;
@@ -68,4 +73,20 @@ select {
     padding: 4px;
     border-radius: 8px;
     color: rgb(255, 241, 102);
+}
+.tab-content{
+    background-color: #222;
+    padding: 0.5rem;
+}
+.list-group-item { display: flex;justify-content: space-between;
+    align-items: center;}
+.list-group-item .btn-group {
+    float:right;
+}
+.list-group-item .id{
+
+}
+
+.list-group-item .nome{
+
 }

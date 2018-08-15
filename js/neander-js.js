@@ -38,7 +38,7 @@ function init() {
     setac(0);
     setpc(0);
 
-    impexp_do(0, document.impexp);
+    // impexp_do(0, document.impexp);
 }
 
 function initselect(sel) {
@@ -125,7 +125,7 @@ function updatemem(form) {
     val = form.val.value;
     let index = op.indexOf(val.toUpperCase());
     if (index !== -1) {
-        val =  index * 16;
+        val = index * 16;
     } else {
         val = val - 0;
     }
@@ -312,8 +312,9 @@ function hex(n) {
     return hexdigit[Math.floor(n / 16)] + hexdigit[n % 16];
 }
 
+var header = "034e4452";
 function impexp_hexmem(form, pane, operation) {
-    header = "034e4452";
+    
 
     if (operation == 0) {
         pane.innerHTML = "" +
@@ -326,30 +327,42 @@ function impexp_hexmem(form, pane, operation) {
             "<TT>xxd -p arquivo.mem >arquivo.hex<\/TT>";
     } else if (operation == 1) {
         txt = form.code.value;
-        if (txt.substr(0, 8) != header) {
-            if (!confirm("Cabeçalho incorreto. Prosseguir?"))
-                return 1;
-        }
-        memp = 0;
-        txtp = 8;
-        while (txtp < txt.length) {
-            if (txt.charAt(txtp) == '\n' || txt.charAt(txtp) == '\r') {
-                txtp++;
-                continue;
-            }
-            setmem(memp++, parseInt(txt.substr(txtp, 2), 16), false);
-            txtp += 4;
-        }
-        setmem(0, mem[0], true);
+        carregarHexmem(txt);
     } else if (operation == 2) {
-        out = header;
-        for (i = 0; i < 256; i++) {
-            out += hex(mem[i]) + "00";
-            if (i % 15 == 12) out += "\n";
-        }
-        form.code.value = out;
+        // out = header;
+        // for (i = 0; i < 256; i++) {
+        //     out += hex(mem[i]) + "00";
+        //     if (i % 15 == 12) out += "\n";
+        // }
+        form.code.value = gerarHexmem();
     }
 
+}
+function carregarHexmem(txt){
+    if (txt.substr(0, 8) != header) {
+        if (!confirm("Cabeçalho incorreto. Prosseguir?"))
+            return 1;
+    }
+    memp = 0;
+    txtp = 8;
+    while (txtp < txt.length) {
+        if (txt.charAt(txtp) == '\n' || txt.charAt(txtp) == '\r') {
+            txtp++;
+            continue;
+        }
+        setmem(memp++, parseInt(txt.substr(txtp, 2), 16), false);
+        txtp += 4;
+    }
+    setmem(0, mem[0], true);
+}
+
+function gerarHexmem() {
+    let out = header;
+    for (i = 0; i < 256; i++) {
+        out += hex(mem[i]) + "00";
+        if (i % 15 == 12) out += "\n";
+    }
+    return out;
 }
 
 function impexp_do(operation, form) {
@@ -365,15 +378,65 @@ function impexp_do(operation, form) {
         document.data.sel.style.display = "block";
     }
 }
+function salvarProjeto(event) {
+    event.preventDefault();
+    let nome = $("#nome-projeto").val();
+    if (nome)
+        inserirItem({
+            nome: nome,
+            data: new Date(),
+            codigo: gerarHexmem()
+        });
+    $("#nome-projeto").val("")
+    carregarProjetos();
+}
 
-function reset_neander(hardReset){
+function reset_neander(hardReset) {
     setac(0);
     setpc(0);
-    if(hardReset){
+    if (hardReset) {
         for (i = 0; i < 256; i++) {
             mem[i] = 0;
             type[i] = (-1);
         }
         setmem(0, 0, true);
     }
+}
+
+function _itemProjetoModelo(id, nome) {
+    let modelo = $.parseHTML("<li class=\"list-group-item\">    <div>        <span class=\"id\">14</span>        <span class=\"nome\">            projeto x        </span>    </div>    <div class=\"btn-group\" role=\"group\" aria-label=\"...\">        <button type=\"button\" class=\"btn btn-primary btn-abrir-projeto\">Abrir</button>        <button type=\"button\" class=\"btn btn-danger btn-excluir-projeto\">Excluir</button>    </div></li>")[0]
+    modelo.querySelector(".nome").innerHTML = nome;
+    modelo.querySelector(".id").innerHTML = id;
+    return modelo;
+}
+function carregarProjetos() {
+    let listaProjetos = $("#lista-projetos");
+    listaProjetos.html("");
+    listarItems().then(projetos => {
+        projetos.forEach(projeto => {
+            console.log(projeto)
+            let item = _itemProjetoModelo(projeto.key, projeto.value.nome)
+            console.log(item)
+            listaProjetos.append(item)
+        })
+    }).then(ev => {
+        $('.btn-excluir-projeto').on('click', function (event) {
+            let id = event.target.parentNode.parentNode.querySelector(".id").innerHTML
+            console.log(id)
+            removerItem(parseInt(id));
+            carregarProjetos();
+        })
+        $('.btn-abrir-projeto').on('click', function (event) {
+            let id = event.target.parentNode.parentNode.querySelector(".id").innerHTML
+            carregarItem(parseInt(id)).then((item)=>{
+                carregarHexmem(item.codigo);
+            })
+            //carrega projeto
+        })
+    })
+
+    //event bindings
+
+
+
 }
