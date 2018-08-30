@@ -1,4 +1,4 @@
-let version = 24;
+let version = 25;
 let cachePrincipal = "neander-v"+version
 let cacheWhitelist = [cachePrincipal]
 
